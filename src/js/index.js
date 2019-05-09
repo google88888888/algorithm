@@ -9,7 +9,7 @@ import Util from "../libs/util";
 import $ from 'jquery';
 
 import * as mock from "../libs/mockData";
-import InventoryCtl from './ctlComponents/inventoryCtl';
+import ClimbingStairsCtl from './ctlComponents/climbingStairsCtl';
 
 import en_GB from 'antd/lib/locale-provider/en_GB';
 import de_DE from 'antd/lib/locale-provider/de_DE';
@@ -30,7 +30,7 @@ class App extends Component {
         this.state = {
             isProd:false,
             i18n:{},
-            show:"inventoryCtl",
+            show:"climbingStairsCtl",
             screenAvailWidth:null,
 
         };
@@ -106,9 +106,9 @@ class App extends Component {
         const {i18n,show,isProd,screenAvailWidth} = this.state;
         let self=this;
         let contentHtml;
-        if(show==="inventoryCtl"){
+        if(show==="climbingStairsCtl"){
             contentHtml=<div>
-                <InventoryCtl 
+                <ClimbingStairsCtl 
                     changeTabs={self.changeTabs.bind(self)} 
                     isProd={isProd}
                     screenAvailWidth={screenAvailWidth}
