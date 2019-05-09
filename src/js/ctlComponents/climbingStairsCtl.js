@@ -1,38 +1,35 @@
 import React from 'react';
 
-import {Popover, Form, Button,Switch,Icon,message,Input, Checkbox,Row,Tree,Radio  ,Select,Spin,Tooltip ,Table,Modal } from 'antd';
+import {Form} from 'antd';
 
-import {RequestApi,RequestApiForEmptyResponse,UnixToDate,urlEncode,formatNum,isPositiveInteger} from "../../libs/util";     
+import {} from "../../libs/util";     
 import '../../css/ctlComponents/climbingStairsCtl.css';
 import '../../libs/common.css';
 
-import * as mock from "../../libs/mockData";
-import $ from 'jquery';
-
-const { TextArea } = Input;
-const RadioGroup = Radio.Group;
-const Option = Select.Option;
-const FormItem = Form.Item;
 const {Component} = React;
 
 class climbingStairsCtl extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            output:"",
         };
     }
     
     componentDidMount() {
         let self=this;  
+        self.setState({
+            output:"44444444444444444444rrrrrrrrrrrrrr"
+        })
+        
     }
     render() {
-        const {} = this.state;
-        const {isProd,screenAvailWidth} = this.props;
-        const { getFieldDecorator } = this.props.form;
-        let self = this;
+        const {output} = this.state;
+        const {screenAvailWidth} = this.props;
 
         return (
             <div className="global-div-climbingStairsCtl" style={{width:screenAvailWidth+"px"}}  >
+                {output}
             </div>
             
         )

@@ -2,13 +2,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { LocaleProvider } from 'antd';
-import { Tabs,message ,Button,Tree } from 'antd';
+import {  } from 'antd';
 
 import '../css/index.css';
-import Util from "../libs/util";
+
 import $ from 'jquery';
 
-import * as mock from "../libs/mockData";
 import ClimbingStairsCtl from './ctlComponents/climbingStairsCtl';
 
 import en_GB from 'antd/lib/locale-provider/en_GB';
@@ -21,9 +20,8 @@ import ko_KR from 'antd/lib/locale-provider/ko_KR';
 import pt_PT from 'antd/lib/locale-provider/pt_PT';
 import zh_CN from 'antd/lib/locale-provider/zh_CN';
 
-const TreeNode = Tree.TreeNode;
 const {Component} = React;
-const TabPane = Tabs.TabPane;
+
 class App extends Component {
     constructor(props) {
         super(props);

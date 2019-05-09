@@ -1,11 +1,9 @@
 
 import $ from 'jquery';
-import React from 'react';
-import {Button,notification,message} from 'antd';
-import Moment from 'moment';
+
+import {message} from 'antd';
 
 export function RequestApi(type,url,data,xCsrfToken,callback,errorCallback){
-    let t1 = new Date().getTime();
     $.ajax({
         type: type,
         url:  url,
@@ -16,11 +14,9 @@ export function RequestApi(type,url,data,xCsrfToken,callback,errorCallback){
             xhr.setRequestHeader("X-CSRF-TOKEN", xCsrfToken);
         },
         success: function(data){
-            let t2 = new Date().getTime();
             callback(data);
         },
         error:function(error){
-            let t3 = new Date().getTime();
             message.config({
                 top: 50,
             });
@@ -34,7 +30,6 @@ export function RequestApi(type,url,data,xCsrfToken,callback,errorCallback){
 }
 
 export function RequestApiForEmptyResponse(type,url,data,xCsrfToken,callback,errorCallback){
-    let t1 = new Date().getTime();
     $.ajax({
         type: type,
         url:  url,
@@ -45,11 +40,9 @@ export function RequestApiForEmptyResponse(type,url,data,xCsrfToken,callback,err
             xhr.setRequestHeader("X-CSRF-TOKEN", xCsrfToken);
         },
         success: function(data){
-            let t2 = new Date().getTime();
             callback(data);
         },
         error:function(error){
-            let t3 = new Date().getTime();
             errorCallback(error);
         }
     })
@@ -62,7 +55,7 @@ export function formatNum(str){
         var newStr = "";
         var count = 0;
         for(var i=str.length-1;i>=0;i--){
-            if(count % 3 == 0 && count != 0){
+            if(count % 3 === 0 && count !== 0){
                 newStr = str.charAt(i) + "," + newStr;
             }else{
                 newStr = str.charAt(i) + newStr;
@@ -72,17 +65,6 @@ export function formatNum(str){
         return newStr;
 }
 
-export  function UnixToDate(unix,format){
-        if(unix === undefined || unix === null) return null;
-
-        if(unix * 1 <= 0) return null;
-
-        if(format === undefined)
-            format = "YYYY-MM-DD HH:mm";
-
-        return Moment.unix(parseInt(unix/1000).toString()).format(format);
-
-}
 
 //stringTime = "2014-07-10 10:21:12";
 export  function  DateToUnix(stringTime){
@@ -97,7 +79,7 @@ export function urlEncode(param, key, encode) {
   if(param==null) return '';  
   var paramStr = '';  
   var t = typeof (param);  
-  if (t == 'string' || t == 'number' || t == 'boolean') {  
+  if (t === 'string' || t === 'number' || t === 'boolean') {  
     paramStr += '&' + key + '=' + ((encode==null||encode) ? encodeURIComponent(param) : param);  
   } else {  
     for (var i in param) {  
