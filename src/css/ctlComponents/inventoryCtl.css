@@ -1,0 +1,39 @@
+
+.global-div-inventoryCtl{
+    float:left;
+}
+.function-div-inventoryCtl{
+    float:left;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-around;
+    height:200px;
+    background: red;
+}
+
+.flex-direction1-div-inventoryCtl{
+    width:100px;
+    flex-grow: 2;
+    height:80px;
+    background: green;
+}
+.flex-direction2-div-inventoryCtl{
+    width:100px;
+    flex-grow: 0;
+    height:60px;
+    background: yellow;
+}
+.flex-direction3-div-inventoryCtl{
+    width:100px;
+    flex-grow: 1;
+    height:80px;
+    background: blue;
+}
+.flex-direction4-div-inventoryCtl{
+    width:100px;
+    flex-grow: 0;
+    height:100px;
+    background: orange;
+}

@@ -1,0 +1,61 @@
+
+.clear-float-div-common{
+    clear:both;
+}
+
+.table-single-row-div-common{
+    background: #ffffff;
+}
+.table-double-row-div-common{
+    background: #f4f6f9;
+}
+
+
+.ant-table-thead > tr:first-child > th:first-child {
+  border-top-left-radius: 0px;
+}
+.ant-table-thead > tr:first-child > th:last-child {
+  border-top-right-radius: 0px;
+}
+
+.ant-table-thead > tr > th, .ant-table-tbody > tr > td {
+    font-size: 12px;
+    padding-top: 5px !important ;
+    padding-right: 8px !important ;
+    padding-bottom: 5px !important ;
+    padding-left: 8px !important ;
+}
+
+
+
+
+.ant-table-column-sorter .anticon-caret-up, .ant-table-column-sorter .anticon-caret-down {
+    color: #ffffff;
+}
+
+.ant-table-thead > tr > th {
+    background: #f6f6f6 !important ;
+    font-weight: bold !important ;
+    color: #54698d !important ;
+    height:33px !important ;
+}
+
+
+.ant-btn-primary{
+    background-color:#468fcc !important ;
+    border-color:#468fcc !important ;
+
+}
+
+.ant-modal-header{
+    padding-left:25px;
+    padding-right:25px;
+    padding-top:0px;
+    padding-bottom:0px;
+}
+.ant-modal-body{
+    padding-left:25px;
+    padding-right:25px;
+    padding-top:0px;
+    padding-bottom:0px;
+}
