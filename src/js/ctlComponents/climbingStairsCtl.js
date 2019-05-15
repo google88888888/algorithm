@@ -12,40 +12,71 @@ class climbingStairsCtl extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            output:"",
+            output:false,
         };
     }
     
     componentDidMount() {
         let self=this;  
+        
+        var A=[1, 2, 3, 4];
 
-        var input=[-2,1,-3,4,-1,2,1,-5,4];
+        //var A=[1,2,3,8,9,10];
+        // fromToIsArray=[
+        //     [0,1,1,null,0,0],
+        //     [0,0,1,null,0,0],
+        //     [0,0,0,5,null,0],
+        //     [0,0,0,0,1,1],
+        //     [0,0,0,0,0,1],
+        //     [0,0,0,0,0,0],
+        // ]
 
-        var a=[];
-        for(var i=0;i<input.length;i++){
-            a.push([]);
+        //var A=[1, 2, 3, 4];
+        // fromToIsArray=[
+        //     [0,1,1,1],
+        //     [0,0,1,1],
+        // ]
+
+        var fromToIsArray=[];
+        for(var i=0;i<A.length-2;i++){
+            fromToIsArray.push([])
         }
-
-        for(var i=0;i<input.length;i++){
-                a[i][i]=input[i]; 
+        for(var j=0;j<A.length-2;j++){
+            fromToIsArray[j][j+1]=A[j+1]-A[j]
         }
-        var max=[0][0];
-        for(var i=0;i<input.length;i++){
-            for(var j=i+1;j<input.length;j++){
-                console.log("11111111111111111111111");
-                console.log(a[i][j-1]);
-                console.log(input[j]);
-                a[i][j]=a[i][j-1]+input[j];
-                if(a[i][j]>max){
-                    max=a[i][j];
+        for(var row=0;row<A.length-2;row++){
+            for(var col=row+2;col<A.length;col++){
+                if(fromToIsArray[row][col-1]==(A[col]-A[col-1])){
+                    fromToIsArray[row][col]=fromToIsArray[row][col-1];
+                }else{
+                    fromToIsArray[row][col]=undefined;
                 }
             }
-            
         }
-        
+        var count=0;
+        for(var row=0;row<A.length-2;row++){
+            var colLast=undefined;
+            for(var col=row+2;col<A.length;col++){
+                if(fromToIsArray[row][col]==undefined&&col==row+2){
+                    break;
+                }else
+                if(fromToIsArray[row][col]==undefined){
+                    colLast=col-1;
+                    break;
+                }else{
+                    colLast=col;
+                }
+            }
+            if(colLast!=undefined){
+                var n=colLast-row+1;
+                count=count+((n-2)+(n-2)*(n-3)/2);
+            }
+        }
+
+        console.log(fromToIsArray);
 
         self.setState({
-            output:max,
+            output:count,
         })
     }
     render() {
